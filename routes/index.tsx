@@ -6,9 +6,11 @@ import { Handlers, PageProps } from "$fresh/server.ts";
 
 export const handler: Handlers<HomeProps> = {
   async GET(req, ctx) {
-    const sources = await (await fetch("https://fresh-handy-components.deno.dev/api/sources")).json();
+    const ButtonText = await Deno.readTextFile("./components/Button.tsx");
     const props: HomeProps = {
-      sources,
+      sources: {
+        "Button": ButtonText,
+      },
     };
     return ctx.render(props);
   },
