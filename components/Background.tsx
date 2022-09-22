@@ -6,7 +6,7 @@ type Props = {
 export default function Background({ children }: Props) {
   return (
     <div
-      class="bg-gray-100 py-16 px-8 flex items-center justify-center"
+      class="bg-gray-200 py-16 px-8 flex items-center justify-center rounded"
       style="background-image: url(grid.svg)"
     >
       {children}

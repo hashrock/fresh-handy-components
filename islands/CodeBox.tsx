@@ -14,11 +14,11 @@ export default function CodeBox(props: CodeBoxProps) {
   return (
     <div class="">
       <details>
-        <summary>
+        <summary class="text-center cursor-pointer bg-white select-none text-gray-600 hover:text-gray-800 hover:bg-gray-50 py-2 rounded-b">
           Code
         </summary>
         <code class="relative">
-          <pre class="bg-gray-800 text-blue-300 p-2 text-sm rounded">{props.code}</pre>
+          <pre class="bg-gray-800 text-blue-300 p-2 text-sm rounded whitespace-pre-wrap">{props.code}</pre>
           <button
             onClick={onCopy}
             class="absolute top-2 right-2 px-3 py-2 border border-gray-400 rounded text-white"
