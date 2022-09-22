@@ -1,4 +1,3 @@
-import Counter from "../islands/Counter.tsx";
 import CodeBox from "../islands/CodeBox.tsx";
 import Background from "../components/Background.tsx";
 import Button from "../components/Button.tsx";
