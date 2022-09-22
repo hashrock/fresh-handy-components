@@ -19,9 +19,12 @@ export default function CodeBox(props: CodeBoxProps) {
         </summary>
         <code class="relative">
           <pre class="bg-gray-800 text-blue-300 p-2 text-sm rounded">{props.code}</pre>
-          <button onClick={onCopy} class="absolute top-2 right-2 px-3 py-2 border border-gray-400 rounded text-white">{
-            copied ? "Copied!" : "Copy"
-          }</button>
+          <button
+            onClick={onCopy}
+            class="absolute top-2 right-2 px-3 py-2 border border-gray-400 rounded text-white"
+          >
+            {copied ? "Copied!" : "Copy"}
+          </button>
         </code>
       </details>
     </div>

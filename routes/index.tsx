@@ -22,7 +22,6 @@ export default function Home() {
       <CodeBox code={ButtonText} />
 
       <h2 class="text-4xl font-bold mt-8">Grid</h2>
-
     </div>
   );
 }
