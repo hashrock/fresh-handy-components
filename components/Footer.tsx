@@ -29,9 +29,11 @@ export default function Footer({ children }: Props) {
   return (
     <div class="bg-white flex w-full max-w-screen-lg gap-16 px-8 py-8 text-sm">
       <div class="flex-1">
-        <div class="font-bold text-2xl">
+        <div class="flex items-center gap-1">
           <LemonIcon class="inline-block" />
-          Fresh
+          <div class="font-bold text-2xl">
+            Fresh
+          </div>
         </div>
         <div class="text-gray-500">
           Full Stack Framework
@@ -56,15 +58,18 @@ export default function Footer({ children }: Props) {
         </div>
       ))}
 
-      <div class="text-gray-500">
+      <div class="text-gray-500 space-y-2">
         <div class="text-xs">
           Copyright © 2020 DenoLand<br />
           All right reserved.
         </div>
 
-        <div>
+        <a
+          href="https://github.com/denoland/fresh"
+          class="inline-block hover:text-black"
+        >
           <BrandGithub />
-        </div>
+        </a>
       </div>
     </div>
   );
