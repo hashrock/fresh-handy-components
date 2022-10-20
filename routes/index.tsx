@@ -1,9 +1,11 @@
 import CodeBox from "../islands/CodeBox.tsx";
 import Background from "../components/Background.tsx";
 import Button from "../components/Button.tsx";
+import ColoredButton from "../components/ColoredButton.tsx";
 import Header from "../components/Header.tsx";
 import Footer from "../components/Footer.tsx";
 
+import { Head } from "$fresh/runtime.ts";
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { ComponentChildren } from "preact";
 
@@ -12,6 +14,7 @@ export const handler: Handlers<HomeProps> = {
     const props: HomeProps = {
       sources: {
         "Button": await Deno.readTextFile("./components/Button.tsx"),
+        "ColoredButton": await Deno.readTextFile("./components/ColoredButton.tsx"),
         "Header": await Deno.readTextFile("./components/Header.tsx"),
         "Footer": await Deno.readTextFile("./components/Footer.tsx"),
       },
@@ -47,6 +50,13 @@ function Section(props: SectionProps) {
 export default function Home(props: PageProps<HomeProps>) {
   return (
     <div class="bg-gray-100 h-full">
+      <Head>
+        <title>Fresh Handy Components</title>
+        <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css" />
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+      </Head>
       <div class="p-4 mx-auto max-w-screen-xl space-y-24">
         <h1 class="text-2xl font-bold">Fresh Handy Components</h1>
 
@@ -54,6 +64,11 @@ export default function Home(props: PageProps<HomeProps>) {
           <Button>
             Click me
           </Button>
+        </Section>
+        <Section title="ColoredButton" source={props.data.sources.ColoredButton}>
+          <ColoredButton>
+            Click me
+          </ColoredButton>
         </Section>
 
         <Section title="Header" source={props.data.sources.Header}>
