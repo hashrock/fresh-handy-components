@@ -4,7 +4,7 @@ import Button from "../components/Button.tsx";
 import ColoredButton from "../components/ColoredButton.tsx";
 import Header from "../components/Header.tsx";
 import Footer from "../components/Footer.tsx";
-import HappyIcon from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/mood-crazy-happy.tsx"
+import HappyIcon from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/mood-crazy-happy.tsx";
 
 import { Head } from "$fresh/runtime.ts";
 import { Handlers, PageProps } from "$fresh/server.ts";
@@ -15,7 +15,9 @@ export const handler: Handlers<HomeProps> = {
     const props: HomeProps = {
       sources: {
         "Button": await Deno.readTextFile("./components/Button.tsx"),
-        "ColoredButton": await Deno.readTextFile("./components/ColoredButton.tsx"),
+        "ColoredButton": await Deno.readTextFile(
+          "./components/ColoredButton.tsx",
+        ),
         "Header": await Deno.readTextFile("./components/Header.tsx"),
         "Footer": await Deno.readTextFile("./components/Footer.tsx"),
       },
@@ -53,9 +55,12 @@ export default function Home(props: PageProps<HomeProps>) {
     <div class="bg-gray-100 h-full">
       <Head>
         <title>Fresh Handy Components</title>
-        <link rel="stylesheet"
-          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css" />
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+        <link
+          rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css"
+        />
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js">
+        </script>
         <script>hljs.highlightAll();</script>
       </Head>
       <div class="p-4 mx-auto max-w-screen-xl space-y-24">
@@ -72,7 +77,10 @@ export default function Home(props: PageProps<HomeProps>) {
             </div>
           </Button>
         </Section>
-        <Section title="ColoredButton" source={props.data.sources.ColoredButton}>
+        <Section
+          title="ColoredButton"
+          source={props.data.sources.ColoredButton}
+        >
           <ColoredButton>
             Click me
           </ColoredButton>
