@@ -4,6 +4,7 @@ import Button from "../components/Button.tsx";
 import ColoredButton from "../components/ColoredButton.tsx";
 import Header from "../components/Header.tsx";
 import Footer from "../components/Footer.tsx";
+import HappyIcon from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/mood-crazy-happy.tsx"
 
 import { Head } from "$fresh/runtime.ts";
 import { Handlers, PageProps } from "$fresh/server.ts";
@@ -63,6 +64,12 @@ export default function Home(props: PageProps<HomeProps>) {
         <Section title="Button" source={props.data.sources.Button}>
           <Button>
             Click me
+          </Button>
+          <Button class="flex gap-1 ml-2">
+            <HappyIcon class="w-6 h-6 inline-block text-gray-500" />
+            <div>
+              With an Icon
+            </div>
           </Button>
         </Section>
         <Section title="ColoredButton" source={props.data.sources.ColoredButton}>
