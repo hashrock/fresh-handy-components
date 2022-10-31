@@ -68,24 +68,6 @@ export default function Home(props: PageProps<HomeProps>) {
       <div class="p-4 mx-auto max-w-screen-xl space-y-24">
         <h1 class="text-2xl font-bold">Fresh Handy Components</h1>
 
-        <a class="block" href="https://tabler-icons-tsx.deno.dev/">
-          <div
-            style="background-image: url(banner-tabler-icons.png)"
-            class="h-48 bg(cover no-repeat white) hover:opacity-50 hover:underline rounded"
-          >
-            <h2 class="text-4xl font-bold p-4">Icons</h2>
-          </div>
-        </a>
-
-        <a class="block" href="https://github.com/denoland/fresh_charts">
-          <div
-            style="background-image: url(banner-chart.png)"
-            class="h-48 bg(cover no-repeat white) hover:opacity-50 hover:underline rounded"
-          >
-            <h2 class="text-4xl font-bold p-4">Charts</h2>
-          </div>
-        </a>
-
         <Section title="Button" source={props.data.sources.Button}>
           <Button>
             Click me
@@ -121,6 +103,24 @@ export default function Home(props: PageProps<HomeProps>) {
           <Footer>
           </Footer>
         </Section>
+
+        <a class="block" href="https://tabler-icons-tsx.deno.dev/">
+          <div
+            style="background-image: url(banner-tabler-icons.png)"
+            class="h-48 bg(cover no-repeat white) hover:opacity-50 hover:underline rounded"
+          >
+            <h2 class="text-4xl font-bold p-4">Icons</h2>
+          </div>
+        </a>
+
+        <a class="block" href="https://github.com/denoland/fresh_charts">
+          <div
+            style="background-image: url(banner-chart.png)"
+            class="h-48 bg(cover no-repeat white) hover:opacity-50 hover:underline rounded"
+          >
+            <h2 class="text-4xl font-bold p-4">Charts</h2>
+          </div>
+        </a>
       </div>
     </div>
   );
