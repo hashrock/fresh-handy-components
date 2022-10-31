@@ -2,6 +2,7 @@ import CodeBox from "../islands/CodeBox.tsx";
 import Background from "../components/Background.tsx";
 import Button from "../components/Button.tsx";
 import ColoredButton from "../components/ColoredButton.tsx";
+import Input from "../components/Input.tsx";
 import Header from "../components/Header.tsx";
 import Footer from "../components/Footer.tsx";
 import HappyIcon from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/mood-crazy-happy.tsx";
@@ -18,6 +19,7 @@ export const handler: Handlers<HomeProps> = {
         "ColoredButton": await Deno.readTextFile(
           "./components/ColoredButton.tsx",
         ),
+        "Input": await Deno.readTextFile("./components/Input.tsx"),
         "Header": await Deno.readTextFile("./components/Header.tsx"),
         "Footer": await Deno.readTextFile("./components/Footer.tsx"),
       },
@@ -102,6 +104,13 @@ export default function Home(props: PageProps<HomeProps>) {
           <ColoredButton>
             Click me
           </ColoredButton>
+        </Section>
+
+        <Section
+          title="Input"
+          source={props.data.sources.Input}
+        >
+          <Input placeholder="Placeholder" />
         </Section>
 
         <Section title="Header" source={props.data.sources.Header}>
